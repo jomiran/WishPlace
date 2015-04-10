@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WishPlace</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_join">JoinActivity</string>
+
+    <string name="sex_prompt">choose your sex</string>
+
+    <string name="birth_year_prompt">choose your birth year</string>
+</resources>
