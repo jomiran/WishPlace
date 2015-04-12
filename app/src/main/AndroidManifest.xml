@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="bross.wishplace">
+    package="bross.wishplace" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -23,13 +23,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".menu.LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +38,15 @@
         </activity>
         <activity
             android:name=".menu.JoinActivity"
-            android:label="@string/title_activity_join"></activity>
+            android:label="@string/title_activity_join" />
+        <activity
+            android:name=".menu.FindIDActivity"
+            android:label="@string/title_activity_find_id" >
+        </activity>
+        <activity
+            android:name=".menu.FindPasswordActivity"
+            android:label="@string/title_activity_find_password" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,25 +1,26 @@
 package bross.wishplace.menu;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import bross.wishplace.R;
-import android.location.LocationManager;
-import android.location.Location;
-import android.telephony.TelephonyManager;
-import android.content.Context;
+
 import com.google.android.gms.maps.model.LatLng;
-import android.util.Log;
+
+import bross.wishplace.R;
 import bross.wishplace.json.JSONParser;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 
 public class JoinActivity extends ActionBarActivity implements View.OnClickListener {
 
@@ -30,12 +31,13 @@ public class JoinActivity extends ActionBarActivity implements View.OnClickListe
     private Spinner selectSex;
     private EditText inputAddress;
     private Spinner selectBirthYear;
-    private CheckBox checkAgree;
+    private com.gc.materialdesign.views.CheckBox checkAgree;
 
     private LocationManager locationManager;
     private String provider;
     private String locationName;
     private LatLng latlng;
+
 
     private String[] getBirthYearArr() {
         final int BIRTH_YEAR_SIZE = 87;
@@ -63,7 +65,7 @@ public class JoinActivity extends ActionBarActivity implements View.OnClickListe
         inputPassword2 = (EditText) findViewById(R.id.join_input_password_2);
         selectSex = (Spinner) findViewById(R.id.join_select_sex);
         inputAddress = (EditText) findViewById(R.id.join_input_address);
-        checkAgree = (CheckBox) findViewById(R.id.join_check_agree);
+        checkAgree = (com.gc.materialdesign.views.CheckBox) findViewById(R.id.join_check_agree);
         selectBirthYear = (Spinner) findViewById(R.id.join_select_birth_year);
 
 
@@ -220,7 +222,7 @@ public class JoinActivity extends ActionBarActivity implements View.OnClickListe
                     return;
                 }
 
-                if (!checkAgree.isChecked()) {
+                if (!checkAgree.isCheck()) {
                     Toast.makeText(getApplicationContext(), "약관에 동의해주세요.", Toast.LENGTH_SHORT)
                             .show();
                     return;

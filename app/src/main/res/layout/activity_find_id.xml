@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fadingEdgeLength="0dp"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/loggedOut"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/lemon"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:src="@drawable/char_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingRight="150dp"
+                android:paddingTop="10dp"
+                android:text="PHONE"
+                android:textColor="@color/orange"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/find_id_phone"
+                android:layout_width="200dp"
+                android:layout_height="34dp"
+                android:background="@drawable/rounded_edittext"
+                android:inputType="phone"
+                android:paddingLeft="5dip"
+                android:singleLine="true"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp" >
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/find_id_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="3dp"
+                    android:text="아이디 찾기"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
