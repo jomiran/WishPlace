@@ -1,21 +1,21 @@
 package bross.wishplace.menu;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
+
 import bross.wishplace.R;
-import android.content.SharedPreferences;
-import android.content.Intent;
 
 public class LoginActivity extends ActionBarActivity implements View.OnClickListener {
 
-    EditText inputEmail;
-    EditText inputPassword;
-    CheckBox checkAutoLogin;
+    private EditText inputEmail;
+    private EditText inputPassword;
+    private com.gc.materialdesign.views.CheckBox checkAutoLogin;
 
     private void init() {
         findViewById(R.id.login_btn_find_id).setOnClickListener(this);
@@ -24,14 +24,14 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         findViewById(R.id.login_btn_login).setOnClickListener(this);
         inputEmail = (EditText) findViewById(R.id.login_input_email);
         inputPassword = (EditText) findViewById(R.id.login_input_password);
-//        checkAutoLogin = (CheckBox) findViewById(R.id.login_check_auto_login);
-//        SharedPreferences pref = getSharedPreferences("save_user.xml", 0);
-//        inputEmail.setText(pref.getString("wishPlaceEmail", ""));
-//        if (pref.getInt("autoLogin", 0) == 1) {
-//            inputPassword.setText(pref.getString("password", ""));
-//            checkAutoLogin.setChecked(true);
-//            onClick(findViewById(R.id.login_btn_login));
-//        }
+        checkAutoLogin = (com.gc.materialdesign.views.CheckBox) findViewById(R.id.login_check_auto_login);
+        SharedPreferences pref = getSharedPreferences("save_user.xml", 0);
+        inputEmail.setText(pref.getString("wishPlaceEmail", ""));
+        if (pref.getInt("autoLogin", 0) == 1) {
+            inputPassword.setText(pref.getString("password", ""));
+            checkAutoLogin.setChecked(true);
+            onClick(findViewById(R.id.login_btn_login));
+        }
 
     }
 
@@ -71,7 +71,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         SharedPreferences pref = getSharedPreferences("save_info.xml", 0);
         SharedPreferences.Editor edit = pref.edit();
         edit.putString("wishPlaceEmail", inputEmail.getText().toString());
-        if (checkAutoLogin.isChecked()) {
+        if (checkAutoLogin.isCheck()) {
 
             edit.putString("password", inputPassword.getText().toString());
             edit.putInt("autoLogin", 1);
@@ -93,17 +93,12 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
                         JoinActivity.class);
                 break;
             case R.id.login_btn_find_id:
-//                intent = new Intent(getApplicationContext(),
-//                        FindIDActivity.class);
+                intent = new Intent(getApplicationContext(),
+                        FindIDActivity.class);
                 break;
             case R.id.login_btn_find_password:
-//                intent = new Intent(getApplicationContext(),
-//                        DaumMapActivity.class);
-                /*
                 intent = new Intent(getApplicationContext(),
                         FindPasswordActivity.class);
-                startActivity(intent);
-                */
                 break;
             case R.id.login_btn_login:
 //                intent = new Intent(getApplicationContext(),
